@@ -1,3 +1,4 @@
+package project2;
 import java.util.*;
 
 public class Testing {
@@ -26,9 +27,11 @@ public class Testing {
 
     private void testAddSet(Collection<Integer> set, String name, int tests){
         long totalTime = 0;
+        Random rand = new Random();
         for(int i = 0; i < tests; i++){
+            Integer x = Integer.valueOf(rand.nextInt(10000));
             long start = System.nanoTime();
-            set.add(i);
+            set.add(x);
             long end = System.nanoTime();
 
             totalTime += end - start;
