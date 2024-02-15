@@ -6,14 +6,24 @@ public class Testing {
         Collection<Integer> hashSet = new HashSet<>();
         Collection<Integer> treeSet = new TreeSet<>();
         Collection<Integer> linkedHashSet = new LinkedHashSet<>();
+        Collection<Integer> linkedList = new LinkedList<>();
+        Collection<Integer> ArrayList = new ArrayList<>();
+        Collection<Integer> PriorityQueue = new PriorityQueue<>();
 
         loadCollection(hashSet);
         loadCollection(treeSet);
         loadCollection(linkedHashSet);
+        loadCollection(linkedList);
+        loadCollection(ArrayList);
+        loadCollection(PriorityQueue);
 
         testAddSet(hashSet, "Hash Set", testCases);
         testAddSet(treeSet, "Tree Set", testCases);
         testAddSet(linkedHashSet, "Linked Hash Set", testCases);
+        testAddSet(linkedList, "Linked List", testCases);
+        testAddSet(linkedList, "Array List", testCases);
+        testAddSet(linkedList, "Priority Queue", testCases);
+
 
     }
 
@@ -42,6 +52,13 @@ public class Testing {
         long averageTime = totalTime/tests;
 
         System.out.printf("%s: %d ns%n", name, averageTime);
+    }
+
+    private void printCollection(List<Integer> arr){
+        int x = arr.size();
+        for(int i = 0; i < x; i++){
+            System.out.println(arr.g);
+        }
     }
     public static void main(String[] args){
         Testing test = new Testing();
