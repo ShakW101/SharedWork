@@ -13,8 +13,6 @@ public class Testing {
         Map<Integer, Integer> treeMap = new TreeMap<>();
         Map<Integer, Integer> linkedHashMap = new LinkedHashMap<>();
 
-
-
         testSet(hashSet, "Hash Set","add", testCases);
         testSet(treeSet, "Tree Set","add", testCases);
         testSet(linkedHashSet, "Linked Hash Set", "add", testCases);
@@ -25,7 +23,6 @@ public class Testing {
         testMap(hashMap, "Hash Map", "add", testCases);
         testMap(treeMap, "Tree Map", "add", testCases);
         testMap(linkedHashMap, "Linked Hash Map", "add", testCases);
-
 
         System.out.println();
 
@@ -72,11 +69,14 @@ public class Testing {
 
     private void loadSet(Set<Integer> input){
         input.clear();
-        Random randInt = new Random();
+        List<Integer> toShuffle = new ArrayList<>();
         for(int i = 0; i < 100000; i++){
-            Integer x = randInt.nextInt(100000);
-            input.add(x);
+            toShuffle.add(i);
         }
+
+        Collections.shuffle(toShuffle);
+
+        input.addAll(toShuffle);
     }
 
     private void loadList(List<Integer> input){
