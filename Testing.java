@@ -99,10 +99,13 @@ public class Testing {
 
     private void loadMap(Map<Integer, Integer> input){
         input.clear();
-        Random randInt = new Random();
+        List<Integer> toShuffle = new ArrayList<>();
         for(int i = 0; i < 100000; i++){
-            Integer x = Integer.valueOf(randInt.nextInt(100000));
-            input.put(x, x);
+            toShuffle.add(i);
+        }
+        Collections.shuffle(toShuffle);
+        for(int i = 0; i < 100000; i++){
+            input.put(toShuffle.get(i), toShuffle.get(i));
         }
     }
 
